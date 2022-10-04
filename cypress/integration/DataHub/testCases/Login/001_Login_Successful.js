@@ -15,8 +15,6 @@ describe('Successful Login',function(){
         })
     })  
 
-
-    //Adding one more comment
         //Validate Successful Login through Skycatch.com
         it('001_Login_Successful',function(){
             loginMethods.navigateToDataHubLogin(this.links.dataHubURL)          //Navigate to DataHub Login
