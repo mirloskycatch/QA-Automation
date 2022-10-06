@@ -10,15 +10,15 @@ describe('Successful Login',function(){
             this.links=data
         })
         
-        cy.fixture('DataHub/prodUserCreds').then(function(data){
+        cy.fixture('DataHub/stgUserCreds').then(function(data){
         this.creds=data
         })
     })  
 
-
         //Validate Successful Login through Skycatch.com
         it('001_Login_Successful',function(){
-            loginMethods.navigateToDataHubLogin(this.links.dataHubURL)          //Navigate to DataHub Login
+
+            loginMethods.navigateToDataHubLogin(this.links.dataHubURLSTG)          //Navigate to DataHub Login
             loginMethods.login(this.creds.validEmail,this.creds.validPwd)       //Login with valid creds
         })
 

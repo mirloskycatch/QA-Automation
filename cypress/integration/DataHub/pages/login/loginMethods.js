@@ -36,11 +36,12 @@ class LoginMethods{
         //This method inserts email and password in the Login page
     insertCredsAndSubmit(email,pwd){
 
-        this.loginObjects.getEmailBox().should('have.text','Your email')       //Email box text validation "Your email"
-        this.loginObjects.getEmailInput().type(email)                          //Typing provided email
-        this.loginObjects.getPasswordBox().should('have.text','Your password') //Password box text validation "Your password"
-        this.loginObjects.getPasswordInput().type(pwd)                         //Typing provided pwd
-        this.loginObjects.getLoginButton().click()                             //Click on Login
+            this.loginObjects.getEmailBox().should('have.text','Your email')       //Email box text validation "Your email"
+            this.loginObjects.getEmailInput().type(email)                          //Typing provided email
+            this.loginObjects.getPasswordBox().should('have.text','Your password') //Password box text validation "Your password"
+            this.loginObjects.getPasswordInput().type(pwd)                         //Typing provided pwd
+            this.loginObjects.getLoginButton().click()                                 //Click on Login
+
     }
 
         //This methods logs in the user to DataHub using the creds provided in the prodUserCreds file under fixture

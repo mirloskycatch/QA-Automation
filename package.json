@@ -11,5 +11,8 @@
   "devDependencies": {
     "cypress": "^10.8.0",
     "cypress-file-upload": "^5.0.8"
+  },
+  "dependencies": {
+    "openapi-backend": "^5.5.0"
   }
 }

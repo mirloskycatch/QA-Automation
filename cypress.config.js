@@ -6,7 +6,11 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     specPattern: 'cypress/integration',///examples/*.js'
-    chromeWebSecurity: false
+    chromeWebSecurity: false,
+    defaultCommandTimeout: 5000,
+    pageLoadTimeout: 10000,
+    failOnStatusCode: false,
+    experimentalSessionAndOrigin: true
 
   },
 });
