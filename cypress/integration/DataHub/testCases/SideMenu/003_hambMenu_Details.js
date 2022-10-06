@@ -14,7 +14,7 @@ describe('Test Cases related to the hamburguer Menu',function(){
             this.links=data
         })
         
-        cy.fixture('DataHub/prodUserCreds').then(function(data){
+        cy.fixture('DataHub/stgUserCreds').then(function(data){
         this.creds=data
     
         })
@@ -23,7 +23,7 @@ describe('Test Cases related to the hamburguer Menu',function(){
     //Validate the Hamburguer Menu Details
     it('003_HambMenu_Details',function(){
         
-        loginMethods.navigateToDataHubLogin(this.links.dataHubURL)          //Navigate to DataHub Login
+        loginMethods.navigateToDataHubLogin(this.links.dataHubURLSTG)          //Navigate to DataHub Login
         loginMethods.login(this.creds.validEmail,this.creds.validPwd)       //Login with valid creds
         hambMenuMethods.clickOnHambMenu()                                   //Click on hamburguer Menu
         hambMenuMethods.checkFieldsInSideMenuDetails(this.creds.validEmail) //Check Menu details. Also provide email to compare vs the expected one

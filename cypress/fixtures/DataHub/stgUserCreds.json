@@ -1,0 +1,7 @@
+{
+    "validEmail" : "test1@skycatch.com",
+    "validPwd" : "1234abCD",
+    "wrongEmail" : "invalidEmail",
+    "wrongPwd" : "123456"
+
+}
