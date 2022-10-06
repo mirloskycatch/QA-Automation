@@ -1,11 +1,6 @@
 {
     "skycatchURL" : "https://skycatch.com/",
-<<<<<<< HEAD
-    "dataHubURL" : "https://datahub.skycatch.com",
-    "preProcessedFilesURL" : "https://datahub-stage.skycatch.com/organization/tzAeNpK6sFCVf7Sqk4XTj9/site/j7xCbbYaqAvnLD7hbg3G2u/dataset/9e285ed5-caa1-42fc-a8e9-cda4b1620a40"
-=======
     "dataHubURLPRD" : "https://datahub.skycatch.com/organization/tzAeNpK6sFCVf7Sqk4XTj9/site/21RedixoqeYBjcz5MAuv7F/dataset/2e7170d3-522c-4753-9057-6e68fc5133f0",
     "dataHubURLSTG" : "https://datahub-stage.skycatch.com/organization/tzAeNpK6sFCVf7Sqk4XTj9/site/j7xCbbYaqAvnLD7hbg3G2u/dataset/9e285ed5-caa1-42fc-a8e9-cda4b1620a40",
     "preProcessedFilesURL" : "https://datahub.skycatch.com/organization/tzAeNpK6sFCVf7Sqk4XTj9/site/2Gy8URCBKrWo29YSG8tjbp/dataset/0d29ba7c-590f-41e3-8135-56e0d8d31cc9"
->>>>>>> QA-Automation_DataHub_Mirlo
 }
