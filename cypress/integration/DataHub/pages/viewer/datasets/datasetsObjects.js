@@ -1,7 +1,24 @@
 export class DatasetsObjects{
-    getDatasetIcon(){
+    getDatasetMenu(){
         return cy.get('[data-locator="datasets.menu-item-header__open"]')
     }
+
+    getDatasetDate(){
+        return cy.get('.sc-bdVaJa.sc-jTzLTM.Jixho')
+    }
+
+    getDatasetIcon(){
+        return cy.get('[data-name="Ico date"]')
+    }
+
+    getdatasetsExpandedContainer(){
+        return cy.get('.sc-ckVGcZ.cTVQAV')
+    }
+
+    getDatasetsSectionContainer(){
+        return cy.get(':nth-child(2) > .chaYff')
+    }
+    
 }
 
 export class DatasetsModal{

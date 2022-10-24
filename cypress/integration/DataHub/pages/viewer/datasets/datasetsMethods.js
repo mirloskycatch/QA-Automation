@@ -1,7 +1,19 @@
+import CommonCommands from "../../../../../support/commands";
+import IngestorObjects from "../../ingestor/ingestorObjects";
+import CanvasObjects from "../canvas/CanvasObjects";
+import { DatasetsModal, DatasetsObjects } from "./datasetsObjects";
+import 'cypress-iframe'
+
 class DatasetsMethods{
 
+    canvasObjects = new CanvasObjects()
+    datasetsObjects = new DatasetsObjects()
+    commonCommands = new CommonCommands
+    datasetsModal = new DatasetsModal()
+    ingestorOjects = new IngestorObjects()
+
     //This method upload the provided PPF type into the viewer
-    uploadPPF(ppfType){
+    uploadSinglePPF(ppfType){
 
         switch(ppfType){
             case 'PointCloud':
@@ -33,7 +45,7 @@ class DatasetsMethods{
         })
     }
 
-    //Select the date for the PPF upload
+    //Select a random date for the PPF upload    ----------->  <<<<<<<<<< IN PROGRESS >>>>>>>>>>>>>
     selectPPFDate(){
 
         this.ppfUploader.getDateSelector() 
@@ -51,7 +63,43 @@ class DatasetsMethods{
             }
         })
     }
-            
+
+    //Validate the Datasets section before expanding the list
+    assertDatasetsSection(){
+        this.datasetsObjects.getDatasetMenu().should('be.visible')                                          //element to be visible
+        this.datasetsObjects.getDatasetDate().should('be.visible')                                           //element to be visible
+        this.compareDSDateWithCanvasDate(this.datasetsObjects.getDatasetDate(),this.canvasObjects.getDatasetDate())
+        this.datasetsObjects.getDatasetIcon().should('be.visible')                                            //elemento to be visible
+    }  
+
+   //This method compares the Dataset name in the Side menu vs the DS date in the canvas
+   compareDSDateWithCanvasDate(el1,el2){
+    let Text1
+        el1.then(($we1) => {
+            Text1 = $we1.text()
+        })
+
+        el2.then(($we2) => {
+            expect(Text1).equal($we2.text().substring(0,12))                //Substring is limited to exclude time
+        })
+    }
+
+    //Expand the datasets section
+    expandDatasetsSection(){
+        this.datasetsObjects.getDatasetDate().click()                                                       //Clck on the DS name to expand the list 
+        this.datasetsObjects.getdatasetsExpandedContainer().should('be.visible')                            //Validate the new container is visible/exist (this comp oonly exists if the list is expanded)
+    }
+
+    //Open Ingestor   <<<<<<<<<< IN PROGRESS >>>>>>>>>>>>>
+    navigateToIngestorFromDatasets(){
+        this.datasetsObjects.getDatasetMenu().click()                   //Expand Dataset Menu
+        this.datasetsModal.getSfMUploadBttn().click()                   //Navigate to ingestor
+    }
+    
+    //Focus on the Datasets section
+    findDatasetsSection(){
+        this.datasetsObjects.getDatasetsSectionContainer().should('be.visible')                   //Focus on the Datasets section
+    }
 
 }
 export default DatasetsMethods;

@@ -25,3 +25,42 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 import 'cypress-file-upload';
+
+class CommonCommands{
+
+    //This methods compares the text between two received Webelements
+    compareTwoWebElementsText(webElement1,webElement2){
+       
+        let Text1
+        webElement1.then(($we1) => {
+            Text1 = $we1.text()
+        })
+
+        webElement2.then(($we2) => {
+            expect(Text1).equal($we2.text())
+        })
+    }
+
+ 
+
+    //Replace the DS ID in the URL
+    replaceDSID(DSID){
+        cy.go('https://datahub-stage.skycatch.com/organization/tzAeNpK6sFCVf7Sqk4XTj9/site/n8zESsR2q65GJSna89ybff/dataset/' + DSID)
+        cy.submit()
+    }
+
+    // Hide fetch/XHR requests
+    hideRequests(){
+        const app = window.top;
+    if (!app.document.head.querySelector('[data-hide-command-log-request]')) {
+    const style = app.document.createElement('style');
+    style.innerHTML =
+        '.command-name-request, .command-name-xhr { display: none }';
+    style.setAttribute('data-hide-command-log-request', '');
+
+    app.document.head.appendChild(style);
+    }
+    }
+
+
+} export default CommonCommands

@@ -11,6 +11,10 @@ class HambMenuObjects{
         return cy.get('.sc-eIHaNI.daeWrX')
     }
 
+    getHambMenuComponent(){
+        return cy.get('.sc-bdVaJa.sc-EHOje.sc-cmthru.bJLUHk')
+    }
+
     getSideMenuEmail(){
         return cy.get('.sc-bdVaJa.sc-jTzLTM.lukkO')
     }
@@ -33,6 +37,10 @@ class HambMenuObjects{
 
     getSideMenuSignOut(){
         return cy.get('.sc-ipZHIp.piUNw.sc-dEoRIm.iJHMkT').contains('Sign out')                       //Element exists and contains the expected text
+    }
+
+    getCloseBttn(){
+        return cy.get('.sc-jtggT.bXgal')
     }
 }
 export default HambMenuObjects;
