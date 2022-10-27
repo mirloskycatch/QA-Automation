@@ -41,7 +41,10 @@ class CommonCommands{
         })
     }
 
- 
+    //Check if an element is hidden
+    isHidden(el) {
+        return (el.offsetParent === null)
+    }
 
     //Replace the DS ID in the URL
     replaceDSID(DSID){

@@ -10,7 +10,7 @@ Given('I log in successfully and navigate to DataHub viewer', function () {
     loginMethods.enterCredentials(this.creds.validEmail,this.creds.validPwd)
     loginMethods.submitValidCredentials()
 })
-When('I focus on the Datasets section', () => {
+When('I am located on the Datasets section', () => {
     datasetsMethods.findDatasetsSection()
 })
 
