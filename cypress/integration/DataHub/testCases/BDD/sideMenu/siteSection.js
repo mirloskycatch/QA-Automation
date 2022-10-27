@@ -11,7 +11,7 @@ Given('I log in successfully and navigate to DataHub viewer', function () {
     loginMethods.submitValidCredentials()
 })
 
-When('I focus on the Site section', () => {
+When('I am located on the Site section', () => {
     siteMethods.findSiteSection()
 })
 

@@ -41,7 +41,7 @@ class LoginMethods{
     }
 
         //This methods logs in the user to DataHub using the creds provided in the prodUserCreds file under fixture
-    submitValidCredentials(email,pwd){
+    submitValidCredentials(){
         this.loginObjects.getLoginButton().should('be.visible')
         this.loginObjects.getLoginButton().click()                                 //Click on Login
         cy.wait(10000)                                                              //wait 5 secs after clicking on submit
@@ -50,12 +50,12 @@ class LoginMethods{
     }
 
         //This is a failed login for negative scenarios
-    wrongCredsLogin(wrongEmail,wrongPwd){
+    submitWrongCredentials(){
 
-        this.enterCredentials(wrongEmail,wrongPwd)                              //Method to insert credentials and submit
-        this.loginObjects.getErrorMsg().should('have.text','Wrong email or password.') //Validate error message is the expected one: "Wrong email or password."
-        this.loginObjects.getLoginForm().should('be.visible')
-
+        this.loginObjects.getLoginButton().should('be.visible')                         //Submit button is visible
+        this.loginObjects.getLoginButton().click()                                      //Click on Login
+        this.loginObjects.getErrorMsg().should('have.text','Wrong email or password.')  //Validate error message is the expected one: "Wrong email or password."
+        this.loginObjects.getLoginForm().should('be.visible')                           //User still in the login page
     }
 
 }
