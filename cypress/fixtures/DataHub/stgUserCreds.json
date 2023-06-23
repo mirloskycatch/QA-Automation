@@ -1,0 +1,6 @@
+{
+    "validEmail" : "mirlo@skycatch.com",
+    "validPwd" : "Sinaloa.123",
+    "wrongEmail" : "invalidEmail",
+    "wrongPwd" : "123456"
+}
